@@ -46,7 +46,9 @@ if __name__ == '__main__':
 	logfile_dir = os.path.join(log_dir, f'{timestr}.txt')
 
 	os.makedirs(log_dir, exist_ok=True)
-	sys.stdout = open(logfile_dir, 'w+')
+	log_stream = open(logfile_dir, 'a+')
+	sys.stdout = log_stream
+	sys.stderr = log_stream
 
 	args = sys.argv
 	category = args[1]
