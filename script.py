@@ -64,7 +64,7 @@ if __name__ == '__main__':
 		from ftplib import FTP
 		ftp = FTP()
 		ftp.set_debuglevel(2)
-		ftp.connect("192.168.31.215", 21)
+		ftp.connect(config['ip'], int(config['port']))
 		ftp.login(config['username'], config['password'])
 		ftp.cwd(config['target-dir'])
 		makeDir(ftp, category)
